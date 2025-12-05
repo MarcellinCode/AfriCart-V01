@@ -17,7 +17,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/admin/login', {
+      const response = await axios.post('https://bonimusik-app-mobile.onrender.com/api/admin/login', {
         email,
         password,
       });

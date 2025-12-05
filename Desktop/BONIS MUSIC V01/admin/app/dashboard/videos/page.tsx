@@ -17,7 +17,7 @@ export default function VideosPage() {
     const fetchVideos = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get('http://localhost:3000/api/videos', {
+            const response = await axios.get('https://bonimusik-app-mobile.onrender.com/api/videos', {
                 headers: { Authorization: `Bearer ${token}` },
                 params: filter !== 'all' ? { category: filter } : {},
             });
@@ -35,7 +35,7 @@ export default function VideosPage() {
 
         try {
             const token = localStorage.getItem('admin_token');
-            await axios.delete(`http://localhost:3000/api/videos/${id}`, {
+            await axios.delete(`https://bonimusik-app-mobile.onrender.com/api/videos/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setVideos(videos.filter((v: any) => v.id !== id));

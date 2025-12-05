@@ -29,7 +29,7 @@ export default function SubscriptionsPage() {
     const fetchSubscriptions = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get('http://localhost:3000/api/subscriptions', {
+            const response = await axios.get('https://bonimusik-app-mobile.onrender.com/api/subscriptions', {
                 headers: { Authorization: `Bearer ${token}` },
                 params: filter !== 'all' ? { status: filter } : {},
             });

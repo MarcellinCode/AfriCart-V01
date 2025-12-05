@@ -26,7 +26,7 @@ export default function EditAlbumPage({ params }: { params: Promise<{ id: string
     const fetchAlbum = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get(`http://localhost:3000/api/albums/${resolvedParams.id}`, {
+            const response = await axios.get(`https://bonimusik-app-mobile.onrender.com/api/albums/${resolvedParams.id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const album = response.data;
@@ -70,7 +70,7 @@ export default function EditAlbumPage({ params }: { params: Promise<{ id: string
                 data.append('file', file);
             }
 
-            await axios.put(`http://localhost:3000/api/albums/${resolvedParams.id}`, data, {
+            await axios.put(`https://bonimusik-app-mobile.onrender.com/api/albums/${resolvedParams.id}`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`,

@@ -24,7 +24,7 @@ export default function NewUserPage() {
 
         try {
             const token = localStorage.getItem('admin_token');
-            await axios.post('http://localhost:3000/api/users', formData, {
+            await axios.post('https://bonimusik-app-mobile.onrender.com/api/users', formData, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 

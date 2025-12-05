@@ -16,7 +16,7 @@ export default function TeachingsPage() {
     const fetchTeachings = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get('http://localhost:3000/api/teachings', {
+            const response = await axios.get('https://bonimusik-app-mobile.onrender.com/api/teachings', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setTeachings(response.data);
@@ -33,7 +33,7 @@ export default function TeachingsPage() {
 
         try {
             const token = localStorage.getItem('admin_token');
-            await axios.delete(`http://localhost:3000/api/teachings/${id}`, {
+            await axios.delete(`https://bonimusik-app-mobile.onrender.com/api/teachings/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setTeachings(teachings.filter((t: any) => t.id !== id));

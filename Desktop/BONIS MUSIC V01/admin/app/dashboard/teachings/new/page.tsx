@@ -48,7 +48,7 @@ export default function NewTeachingPage() {
                 data.append('thumbnail', thumbnailFile);
             }
 
-            await axios.post('http://localhost:3000/api/teachings', data, {
+            await axios.post('https://bonimusik-app-mobile.onrender.com/api/teachings', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`,

@@ -19,7 +19,7 @@ export default function LivesPage() {
     const fetchLiveLinks = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get('http://localhost:3000/api/lives', {
+            const response = await axios.get('https://bonimusik-app-mobile.onrender.com/api/lives', {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -44,7 +44,7 @@ export default function LivesPage() {
         try {
             const token = localStorage.getItem('admin_token');
             await axios.put(
-                'http://localhost:3000/api/lives',
+                'https://bonimusik-app-mobile.onrender.com/api/lives',
                 {
                     tiktok: { url: tiktokUrl, is_active: tiktokActive },
                     facebook: { url: facebookUrl, is_active: facebookActive },
@@ -70,7 +70,7 @@ export default function LivesPage() {
         try {
             const token = localStorage.getItem('admin_token');
             await axios.post(
-                'http://localhost:3000/api/notifications/send',
+                'https://bonimusik-app-mobile.onrender.com/api/notifications/send',
                 { message: notificationMessage },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

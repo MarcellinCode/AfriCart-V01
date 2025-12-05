@@ -20,7 +20,7 @@ export default function AlbumDetailPage() {
     const fetchAlbum = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const res = await axios.get(`http://localhost:3000/api/albums/${id}`, {
+            const res = await axios.get(`https://bonimusik-app-mobile.onrender.com/api/albums/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setAlbum(res.data);
@@ -65,7 +65,7 @@ export default function AlbumDetailPage() {
             console.log('Uploading track:', trackForm.title, 'File size:', trackFile.size);
 
             const res = await axios.post(
-                `http://localhost:3000/api/albums/${id}/tracks`,
+                `https://bonimusik-app-mobile.onrender.com/api/albums/${id}/tracks`,
                 formData,
                 {
                     headers: {
@@ -108,7 +108,7 @@ export default function AlbumDetailPage() {
     const deleteTrack = async (trackId: string) => {
         try {
             const token = localStorage.getItem('admin_token');
-            await axios.delete(`http://localhost:3000/api/albums/tracks/${trackId}`, {
+            await axios.delete(`https://bonimusik-app-mobile.onrender.com/api/albums/tracks/${trackId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             fetchAlbum();

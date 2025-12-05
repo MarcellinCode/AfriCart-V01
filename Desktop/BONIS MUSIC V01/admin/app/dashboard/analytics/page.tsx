@@ -24,7 +24,7 @@ export default function AnalyticsPage() {
     const fetchAnalytics = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get('http://localhost:3000/api/analytics/overview', {
+            const response = await axios.get('https://bonimusik-app-mobile.onrender.com/api/analytics/overview', {
                 headers: { Authorization: `Bearer ${token}` },
             });
 

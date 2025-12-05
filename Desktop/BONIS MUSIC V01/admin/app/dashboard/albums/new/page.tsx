@@ -42,7 +42,7 @@ export default function NewAlbumPage() {
                 data.append('file', file);
             }
 
-            const response = await axios.post('http://localhost:3000/api/albums', data, {
+            const response = await axios.post('https://bonimusik-app-mobile.onrender.com/api/albums', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`,

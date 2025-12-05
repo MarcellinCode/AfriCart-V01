@@ -27,7 +27,7 @@ export default function EditTeachingPage({ params }: { params: Promise<{ id: str
     const fetchTeaching = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get(`http://localhost:3000/api/teachings/${resolvedParams.id}`, {
+            const response = await axios.get(`https://bonimusik-app-mobile.onrender.com/api/teachings/${resolvedParams.id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const teaching = response.data;
@@ -72,7 +72,7 @@ export default function EditTeachingPage({ params }: { params: Promise<{ id: str
             if (thumbnail) data.append('thumbnail', thumbnail);
             if (file) data.append('file', file);
 
-            await axios.put(`http://localhost:3000/api/teachings/${resolvedParams.id}`, data, {
+            await axios.put(`https://bonimusik-app-mobile.onrender.com/api/teachings/${resolvedParams.id}`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`,

@@ -48,7 +48,7 @@ export default function NewVideoPage() {
                 data.append('thumbnail', thumbnailFile);
             }
 
-            await axios.post('http://localhost:3000/api/videos', data, {
+            await axios.post('https://bonimusik-app-mobile.onrender.com/api/videos', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`,

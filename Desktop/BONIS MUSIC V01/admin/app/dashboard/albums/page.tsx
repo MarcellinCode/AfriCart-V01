@@ -16,7 +16,7 @@ export default function AlbumsPage() {
     const fetchAlbums = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get('http://localhost:3000/api/albums', {
+            const response = await axios.get('https://bonimusik-app-mobile.onrender.com/api/albums', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setAlbums(response.data);
@@ -33,7 +33,7 @@ export default function AlbumsPage() {
 
         try {
             const token = localStorage.getItem('admin_token');
-            await axios.delete(`http://localhost:3000/api/albums/${id}`, {
+            await axios.delete(`https://bonimusik-app-mobile.onrender.com/api/albums/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setAlbums(albums.filter((a: any) => a.id !== id));

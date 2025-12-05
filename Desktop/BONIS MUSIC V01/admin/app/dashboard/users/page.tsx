@@ -17,7 +17,7 @@ export default function UsersPage() {
     const fetchUsers = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get('http://localhost:3000/api/users', {
+            const response = await axios.get('https://bonimusik-app-mobile.onrender.com/api/users', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setUsers(response.data);
@@ -34,7 +34,7 @@ export default function UsersPage() {
         try {
             const token = localStorage.getItem('admin_token');
             await axios.put(
-                `http://localhost:3000/api/users/${userId}/block`,
+                `https://bonimusik-app-mobile.onrender.com/api/users/${userId}/block`,
                 {},
                 { headers: { Authorization: `Bearer ${token}` } }
             );

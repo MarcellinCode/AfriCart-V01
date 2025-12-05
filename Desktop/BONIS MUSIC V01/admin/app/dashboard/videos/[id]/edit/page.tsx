@@ -27,7 +27,7 @@ export default function EditVideoPage({ params }: { params: Promise<{ id: string
     const fetchVideo = async () => {
         try {
             const token = localStorage.getItem('admin_token');
-            const response = await axios.get(`http://localhost:3000/api/videos/${resolvedParams.id}`, {
+            const response = await axios.get(`https://bonimusik-app-mobile.onrender.com/api/videos/${resolvedParams.id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const video = response.data;
@@ -72,7 +72,7 @@ export default function EditVideoPage({ params }: { params: Promise<{ id: string
             if (thumbnail) data.append('thumbnail', thumbnail);
             if (videoFile) data.append('video', videoFile);
 
-            await axios.put(`http://localhost:3000/api/videos/${resolvedParams.id}`, data, {
+            await axios.put(`https://bonimusik-app-mobile.onrender.com/api/videos/${resolvedParams.id}`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`,
