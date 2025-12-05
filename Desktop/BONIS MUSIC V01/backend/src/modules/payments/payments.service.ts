@@ -7,13 +7,13 @@ export class PaymentsService {
     constructor(private subscriptionsService: SubscriptionsService) {
         // Initialize FedaPay
         FedaPay.setApiKey(process.env.FEDAPAY_SECRET_KEY);
-        FedaPay.setEnvironment('sandbox'); // or 'live' based on env
+        FedaPay.setEnvironment('live'); // Production mode
     }
 
     async createTransaction(amount: number, description: string, userId: string, plan: string, returnUrl?: string) {
         try {
             // Append returnUrl to callback_url if provided
-            let callbackUrl = 'http://192.168.1.69:3000/api/payments/callback';
+            let callbackUrl = 'https://bonimusik-app-mobile.onrender.com/api/payments/callback';
             if (returnUrl) {
                 callbackUrl += `?returnUrl=${encodeURIComponent(returnUrl)}`;
             }
